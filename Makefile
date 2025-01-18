@@ -20,6 +20,9 @@ ibus-engine-rime-static:
 	(cd $(builddir); cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_DATADIR=$(sharedir) -DCMAKE_INSTALL_LIBEXECDIR=$(libexecdir) -DBUILD_STATIC=ON .. && make)
 	@echo ':)'
 
+build-docker:
+	bash scripts/build_ibus_rume_docker.sh
+
 install:
 	(cd $(builddir); make install)
 
